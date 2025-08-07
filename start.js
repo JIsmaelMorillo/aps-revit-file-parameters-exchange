@@ -16,11 +16,16 @@
 // UNINTERRUPTED OR ERROR FREE.
 /////////////////////////////////////////////////////////////////////
 
+require('dotenv').config()
+
 const path = require('path');
 const express = require('express');
 const cookieSession = require('cookie-session');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
+
+
+
 const config = require('./config');
 if (config.credentials.client_id == null || config.credentials.client_secret == null) {
     console.error('Missing APS_CLIENT_ID or APS_CLIENT_SECRET env. variables.');

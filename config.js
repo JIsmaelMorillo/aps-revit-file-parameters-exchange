@@ -22,7 +22,7 @@ module.exports = {
     credentials: {
         client_id: process.env.APS_CLIENT_ID,
         client_secret: process.env.APS_CLIENT_SECRET,
-        callback_url: process.env.APS_CALLBACK_URL
+        callback_url: process.env.NODE_ENV == "staging" ? "http://tc-harm-01:3001/api/aps/callback/oauth" : process.env.APS_CALLBACK_URL
     },
     scopes: {
         // Required scopes for the server-side application
